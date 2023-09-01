@@ -1,10 +1,14 @@
 import mongoose from "mongoose";
 
-if (!process.env.MONGO_URL) {
-  throw new Error("Please add the MONGO_URL environment variable");
+// import dotenv from "dotenv";
+
+// dotenv.config();
+
+if (!process.env.MONGODB_URL) {
+  throw new Error("Please add the MONGODB_URL environment variable");
 }
 
-mongoose.connect(process.env.MONGO_URL);
+mongoose.connect(process.env.MONGODB_URL);
 
 const database = mongoose.connection;
 
