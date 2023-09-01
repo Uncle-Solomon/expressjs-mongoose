@@ -4,7 +4,7 @@ import helmet from "helmet";
 import morgan from "morgan";
 import cors from "cors";
 // import { PORT } from "./utils/config";
-import authRoutes from "./routes/auth";
+import { authRoute } from "./routes/auth";
 import { mqttRoute } from "./routes/mqtt";
 
 import dotenv from "dotenv";
@@ -23,7 +23,7 @@ app.use(
 app.use(express.raw({ type: "application/vnd.custom-type" }));
 app.use(express.text({ type: "text/html" }));
 
-app.use("/api/v1", authRoutes);
+app.use("/api/v1", authRoute);
 app.use("/api/v1", mqttRoute);
 
 //Server Landing Page
